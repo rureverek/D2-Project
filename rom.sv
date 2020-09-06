@@ -47,20 +47,34 @@ always_comb
   begin
   mdr = 0;
   case (mar)
-	0: mdr = {`LOAD, 5'd10};
-	1: mdr = {`STORE, 5'd21}; //Store counter
-	2: mdr = {`LOAD, 5'd30}; //Get Char
-	3: mdr = {`XOR,5'd11}; //Encrypt/Decrypt
-	4: mdr = {`STORE, 5'd31}; //Display in HEX
-	5: mdr = {`LOAD, 5'd21};
-	6: mdr = {`SUB, 5'd9};//Decrement counter
-	7: mdr = {`BNE, 5'd9};//Repeat, if 8bit block end
-	8: mdr = 0;
-	9: mdr = 1;
-	10: mdr = 7;
-	11: mdr = 5'b10101;//key
-	
-	
+	//load pointer (5'd6) (0)
+	0: mdr = {`LOAD, 5'd9};
+	1: mdr = {`STORE, 5'd20};
+	//save pointer in ram (5'd20) <-- bne function loop (1)
+	2: mdr = {`LDE, 5'd20};
+	//load from (5'd20) (2)
+	3: mdr = {`XOR, 5'd10};
+	//xor from (5'd7) (3)
+	4: mdr = {`STORE, 5'd31};
+	//store in hex (4)
+	//4: 
+	//increment pointer (load, add 1, (can use INC op code)) (5) (6)
+	5: mdr = {`LOAD, 5'd20};
+	6: mdr = {`INC, 5'd0};
+	//mdr = {`STORE, 5'd20};
+	//bne 1 (7)
+	7: mdr = {`BNE, 5'd8};
+	8: mdr = 1;
+	9: mdr = 5'd11; //Start data pointer
+	10: mdr = 5'b10101;//code
+	11: mdr = 5'b01111;//data 1-8 bits to encode
+	12: mdr = 5'b01000;
+	13:mdr = 5'b11001;
+	14:mdr = 5'b10100;
+	15:mdr = 5'b01101;
+	16:mdr = 5'b01101;
+	17:mdr = 5'b11110;
+	18:mdr = 5'b01011;
     default: mdr = 0;
   endcase
   end

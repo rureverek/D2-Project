@@ -31,8 +31,7 @@ Addr_bus, CS, R_NW, z_flag;
 
 logic [OP_W-1:0] op;
 wire [WORD_W-1:0] sysbus;
-logic [3:0] hex1, hex2;
-
+logic [7:0] hex1;
 
 sequencer #(.WORD_W(WORD_W), .OP_W(OP_W)) s1  (.*);
 
@@ -52,6 +51,6 @@ SSR #(.WORD_W(WORD_W), .OP_W(OP_W)) r3 (.*);
 
 sevenseg d0 (.address(sysbus[3:0]), .data(disp0));
 sevenseg d1 (.address(sysbus[7:4]), .data(disp1));
-sevenseg d2 (.address(hex1), .data(disp2));
-sevenseg d3 (.address(hex2), .data(disp3));
+sevenseg d2 (.address(hex1[7:4]), .data(disp2));
+sevenseg d3 (.address(hex1[3:0]), .data(disp3));
 endmodule

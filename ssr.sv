@@ -7,7 +7,7 @@
 
 module SSR #(parameter WORD_W = 8, OP_W = 3)
                (input logic clock, n_reset, MDR_bus, load_MDR, load_MAR, CS, R_NW,
-                inout wire [WORD_W-1:0] sysbus, input logic [7:0] switches, output logic [3:0]hex1,hex2);
+                inout wire [WORD_W-1:0] sysbus, input logic [7:0] switches, output logic [7:0]hex1);
 
 //`include "opcodes.h"
 		
@@ -26,7 +26,6 @@ always_ff @(posedge clock, negedge n_reset)
  	mdr <= 0;
  	mar <= 0;
 	hex1 <= 0;
-	hex2 <= 0;
  	end
  else
  	if (load_MAR)
@@ -37,10 +36,9 @@ always_ff @(posedge clock, negedge n_reset)
 			begin
  			if (!R_NW) // Writing, so this signal needs to be low
 			begin
-			hex1 <= mdr[7:4];
-			hex2 <= mdr[3:0];
+			hex1 <= mdr;
 			end
-			else mdr <= {hex1,hex2};
+			else mdr <= {hex1[7:4],hex1[3:0]};
 			end
  end
 

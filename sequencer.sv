@@ -81,7 +81,8 @@ always_comb
          Next_State = s3;
          end
     s3: begin
-         Addr_bus = 1'b1;
+	if(op != `LDE)Addr_bus = 1'b1;
+	else ACC_bus = 1'b1;
          load_MAR = 1'b1;
          if (op == `STORE)
            Next_State = s4;
@@ -100,7 +101,7 @@ always_comb
     s6: begin
          CS = 1'b1;
          R_NW = 1'b1;
-         if (op == `LOAD)
+         if (op == `LOAD || op == `LDE)
           Next_State = s7;
         else if (op == `BNE)
           begin

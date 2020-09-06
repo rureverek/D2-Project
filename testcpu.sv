@@ -31,6 +31,7 @@ CPU #(.WORD_W(WORD_W), .OP_W(OP_W)) c1 (.*);
 
 always
   begin
+switches = 5'b01111;
 #10ns clock = 1'b1;
 #10ns clock = 1'b0;
 end
