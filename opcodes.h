@@ -25,3 +25,4 @@
 `define SUB 3'b011
 `define BNE 3'b100
 `define XOR 3'b101
+`define INC 3'b110

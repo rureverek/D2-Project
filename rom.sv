@@ -29,9 +29,8 @@ module ROM #(parameter WORD_W = 8, OP_W = 3)
 logic [WORD_W-OP_W-1:0] mar;
 logic [WORD_W-1:0] mdr;
 
-
-assign sysbus = (MDR_bus & ~mar[WORD_W-OP_W-1]) ? mdr : {WORD_W{1'bZ}};
-
+assign sysbus = (MDR_bus & (mar < 5'd20)) ? mdr : {WORD_W{1'bZ}};//change to mar < 20
+//assign sysbus = (MDR_bus & ~mar[WORD_W-OP_W-1]) ? mdr : {WORD_W{1'bZ}};
 always_ff @(posedge clock, negedge n_reset)
   begin
   if (~n_reset)
@@ -48,14 +47,20 @@ always_comb
   begin
   mdr = 0;
   case (mar)
-
-    0: mdr = {`LOAD, 5'd5};
-	1: mdr = {`STORE, 5'd16};
-	2: mdr = {`LOAD, 5'd6};
-	3: mdr = {`XOR, 5'd16};
-    4: mdr = {`STORE, 5'd31};
-	5: mdr = 5'b00001;
-	6: mdr = 5'b10101;
+	0: mdr = {`LOAD, 5'd10};
+	1: mdr = {`STORE, 5'd21}; //Store counter
+	2: mdr = {`LOAD, 5'd30}; //Get Char
+	3: mdr = {`XOR,5'd11}; //Encrypt/Decrypt
+	4: mdr = {`STORE, 5'd31}; //Display in HEX
+	5: mdr = {`LOAD, 5'd21};
+	6: mdr = {`SUB, 5'd9};//Decrement counter
+	7: mdr = {`BNE, 5'd9};//Repeat, if 8bit block end
+	8: mdr = 0;
+	9: mdr = 1;
+	10: mdr = 7;
+	11: mdr = 5'b10101;//key
+	
+	
     default: mdr = 0;
   endcase
   end

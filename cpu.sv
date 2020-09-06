@@ -26,7 +26,7 @@ module CPU #(parameter WORD_W = 8, OP_W = 3)
                    output logic [6:0] disp0, disp1, disp2, disp3);
 		   
 logic ACC_bus, load_ACC, PC_bus, load_PC, load_IR, load_MAR,
-MDR_bus, load_MDR, ALU_ACC, ALU_add, ALU_sub, ALU_xor, INC_PC,
+MDR_bus, load_MDR, ALU_ACC, ALU_add, ALU_sub, ALU_xor, ALU_inc, INC_PC,
 Addr_bus, CS, R_NW, z_flag;
 
 logic [OP_W-1:0] op;

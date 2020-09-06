@@ -32,8 +32,9 @@ logic [WORD_W-1:0] mem [0:(1<<(WORD_W-OP_W-1))-1]; //top half of address range
 //logic [WORD_W-1:0] mem [0:11]; //top half of address range
 int i;
 
-assign sysbus = (MDR_bus & mar[WORD_W-OP_W-1] & ~(mar == 5'd31) & ~(mar == 5'd30)) ? mdr : {WORD_W{1'bZ}};
-
+//change to mar >19 <30
+//assign sysbus = (MDR_bus & mar[WORD_W-OP_W-1] & ~(mar == 5'd31) & ~(mar == 5'd30)) ? mdr : {WORD_W{1'bZ}};
+assign sysbus = (MDR_bus & mar[WORD_W-OP_W-1] & (mar > 5'd19) & (mar < 5'd30)) ? mdr : {WORD_W{1'bZ}};
 always_ff @(posedge clock, negedge n_reset)
   begin
   if (~n_reset)

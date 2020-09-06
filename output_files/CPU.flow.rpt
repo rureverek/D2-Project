@@ -1,5 +1,5 @@
 Flow report for CPU
-Thu Jan 16 15:51:29 2020
+Fri Jan 17 14:34:23 2020
 Quartus Prime Version 16.1.2 Build 203 01/18/2017 SJ Standard Edition
 
 
@@ -41,14 +41,14 @@ agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Flow Summary                                                                      ;
 +---------------------------------+-------------------------------------------------+
-; Flow Status                     ; Successful - Thu Jan 16 15:51:18 2020           ;
+; Flow Status                     ; Successful - Fri Jan 17 14:34:12 2020           ;
 ; Quartus Prime Version           ; 16.1.2 Build 203 01/18/2017 SJ Standard Edition ;
 ; Revision Name                   ; CPU                                             ;
 ; Top-level Entity Name           ; CPU                                             ;
 ; Family                          ; Cyclone V                                       ;
 ; Device                          ; 5CSEMA5F31C6                                    ;
 ; Timing Models                   ; Final                                           ;
-; Logic utilization (in ALMs)     ; 84 / 32,070 ( < 1 % )                           ;
+; Logic utilization (in ALMs)     ; 83 / 32,070 ( < 1 % )                           ;
 ; Total registers                 ; 83                                              ;
 ; Total pins                      ; 38 / 457 ( 8 % )                                ;
 ; Total virtual pins              ; 0                                               ;
@@ -68,7 +68,7 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 01/16/2020 15:50:20 ;
+; Start date & time ; 01/17/2020 14:33:08 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; CPU                 ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 159303467950366.157918981916180        ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 5311868104665.157927158806020          ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
 ; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
@@ -94,11 +94,11 @@ agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:10     ; 1.0                     ; 4883 MB             ; 00:00:17                           ;
-; Fitter                    ; 00:00:31     ; 1.0                     ; 6890 MB             ; 00:01:19                           ;
-; Assembler                 ; 00:00:08     ; 1.0                     ; 4850 MB             ; 00:00:05                           ;
-; TimeQuest Timing Analyzer ; 00:00:10     ; 1.1                     ; 5214 MB             ; 00:00:05                           ;
-; Total                     ; 00:00:59     ; --                      ; --                  ; 00:01:46                           ;
+; Analysis & Synthesis      ; 00:00:10     ; 1.0                     ; 4878 MB             ; 00:00:16                           ;
+; Fitter                    ; 00:00:35     ; 1.0                     ; 6956 MB             ; 00:01:26                           ;
+; Assembler                 ; 00:00:09     ; 1.0                     ; 4849 MB             ; 00:00:05                           ;
+; TimeQuest Timing Analyzer ; 00:00:10     ; 1.1                     ; 5213 MB             ; 00:00:05                           ;
+; Total                     ; 00:01:04     ; --                      ; --                  ; 00:01:52                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -107,20 +107,20 @@ agreement for further details.
 +---------------------------+------------------+------------+------------+----------------+
 ; Module Name               ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +---------------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis      ; JFB59-R2213-A33  ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter                    ; JFB59-R2213-A33  ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler                 ; JFB59-R2213-A33  ; Windows 10 ; 10.0       ; x86_64         ;
-; TimeQuest Timing Analyzer ; JFB59-R2213-A33  ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Synthesis      ; JFB59-R2213-A20  ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter                    ; JFB59-R2213-A20  ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler                 ; JFB59-R2213-A20  ; Windows 10 ; 10.0       ; x86_64         ;
+; TimeQuest Timing Analyzer ; JFB59-R2213-A20  ; Windows 10 ; 10.0       ; x86_64         ;
 +---------------------------+------------------+------------+------------+----------------+
 
 
 ------------
 ; Flow Log ;
 ------------
-quartus_map --read_settings_files=on --write_settings_files=off lab3 -c CPU
-quartus_fit --read_settings_files=off --write_settings_files=off lab3 -c CPU
-quartus_asm --read_settings_files=off --write_settings_files=off lab3 -c CPU
-quartus_sta lab3 -c CPU
+quartus_map --read_settings_files=on --write_settings_files=off lab4 -c CPU
+quartus_fit --read_settings_files=off --write_settings_files=off lab4 -c CPU
+quartus_asm --read_settings_files=off --write_settings_files=off lab4 -c CPU
+quartus_sta lab4 -c CPU
 
 
 

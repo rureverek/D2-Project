@@ -1,0 +1,242 @@
+# Compile of alu.sv was successful.
+# Compile of cpu.sv was successful.
+# Compile of ir.sv was successful.
+# Compile of pc.sv was successful.
+# Compile of ram.sv was successful.
+# Compile of rom.sv was successful.
+# Compile of sequencer.sv was successful.
+# Compile of sevenseg.sv was successful.
+# Compile of ssr.sv was successful.
+# Compile of testcpu.sv was successful.
+# 10 compiles, 0 failed with no errors.
+# Compile of alu.sv was successful.
+# Compile of cpu.sv was successful.
+# Compile of ir.sv was successful.
+# Compile of pc.sv was successful.
+# Compile of ram.sv was successful.
+# Compile of rom.sv was successful.
+# Compile of sequencer.sv was successful.
+# Compile of sevenseg.sv was successful.
+# Compile of ssr.sv was successful.
+# Compile of testcpu.sv was successful.
+# 10 compiles, 0 failed with no errors.
+vsim -novopt work.TestCPU
+# vsim -novopt work.TestCPU 
+# Start time: 12:22:03 on Jan 17,2020
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# Refreshing H:/D2/cpu4/work.TestCPU
+# Loading sv_std.std
+# Loading work.TestCPU
+# Refreshing H:/D2/cpu4/work.CPU
+# Loading work.CPU
+# Refreshing H:/D2/cpu4/work.sequencer
+# Loading work.sequencer
+# Refreshing H:/D2/cpu4/work.IR
+# Loading work.IR
+# Refreshing H:/D2/cpu4/work.PC
+# Loading work.PC
+# Refreshing H:/D2/cpu4/work.ALU
+# Loading work.ALU
+# Refreshing H:/D2/cpu4/work.RAM
+# Loading work.RAM
+# Refreshing H:/D2/cpu4/work.ROM
+# Loading work.ROM
+# Refreshing H:/D2/cpu4/work.SSR
+# Loading work.SSR
+# Refreshing H:/D2/cpu4/work.sevenseg
+# Loading work.sevenseg
+add wave -position end  sim:/TestCPU/clock
+add wave -position end  sim:/TestCPU/c1/sysbus
+add wave -position end  sim:/TestCPU/c1/s1/Present_State
+add wave -position end  sim:/TestCPU/c1/p1/count
+add wave -position end  sim:/TestCPU/c1/a1/acc
+add wave -position end  sim:/TestCPU/c1/hex1
+add wave -position end  sim:/TestCPU/c1/hex2
+add wave -position 1  sim:/TestCPU/switches
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+add wave -position end  sim:/TestCPU/c1/r1/mem[5]
+restart
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# Compile of alu.sv was successful.
+# Compile of cpu.sv was successful.
+# Compile of ir.sv was successful.
+# Compile of pc.sv was successful.
+# Compile of ram.sv was successful.
+# Compile of rom.sv was successful.
+# Compile of sequencer.sv was successful.
+# Compile of sevenseg.sv was successful.
+# Compile of ssr.sv was successful.
+# Compile of testcpu.sv was successful.
+# 10 compiles, 0 failed with no errors.
+vsim -novopt work.TestCPU
+# End time: 12:26:20 on Jan 17,2020, Elapsed time: 0:04:17
+# Errors: 0, Warnings: 0
+# vsim -novopt work.TestCPU 
+# Start time: 12:26:20 on Jan 17,2020
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# Refreshing H:/D2/cpu4/work.TestCPU
+# Loading sv_std.std
+# Loading work.TestCPU
+# Refreshing H:/D2/cpu4/work.CPU
+# Loading work.CPU
+# Refreshing H:/D2/cpu4/work.sequencer
+# Loading work.sequencer
+# Refreshing H:/D2/cpu4/work.IR
+# Loading work.IR
+# Refreshing H:/D2/cpu4/work.PC
+# Loading work.PC
+# Refreshing H:/D2/cpu4/work.ALU
+# Loading work.ALU
+# Refreshing H:/D2/cpu4/work.RAM
+# Loading work.RAM
+# Refreshing H:/D2/cpu4/work.ROM
+# Loading work.ROM
+# Refreshing H:/D2/cpu4/work.SSR
+# Loading work.SSR
+# Refreshing H:/D2/cpu4/work.sevenseg
+# Loading work.sevenseg
+add wave -position end  sim:/TestCPU/clock
+add wave -position end  sim:/TestCPU/c1/sysbus
+add wave -position end  sim:/TestCPU/c1/hex1
+add wave -position end  sim:/TestCPU/c1/hex2
+add wave -position end  sim:/TestCPU/c1/r1/mem[5]
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# End time: 13:16:10 on Jan 17,2020, Elapsed time: 0:49:50
+# Errors: 0, Warnings: 1
