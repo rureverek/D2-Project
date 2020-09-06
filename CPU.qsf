@@ -1,0 +1,106 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 2017  Intel Corporation. All rights reserved.
+# Your use of Intel Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Intel Program License 
+# Subscription Agreement, the Intel Quartus Prime License Agreement,
+# the Intel MegaCore Function License Agreement, or other 
+# applicable license agreement, including, without limitation, 
+# that your use is for the sole purpose of programming logic 
+# devices manufactured by Intel and sold by Intel or its 
+# authorized distributors.  Please refer to the applicable 
+# agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus Prime
+# Version 16.1.2 Build 203 01/18/2017 SJ Standard Edition
+# Date created = 15:35:46  January 16, 2020
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		CPU_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus Prime software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "Cyclone V"
+set_global_assignment -name DEVICE 5CSEMA5F31C6
+set_global_assignment -name TOP_LEVEL_ENTITY CPU
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 16.1.2
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "15:35:46  JANUARY 16, 2020"
+set_global_assignment -name LAST_QUARTUS_VERSION "16.1.2 Standard Edition"
+set_global_assignment -name SYSTEMVERILOG_FILE ssr.sv
+set_global_assignment -name SYSTEMVERILOG_FILE sevenseg.sv
+set_global_assignment -name SYSTEMVERILOG_FILE sequencer.sv
+set_global_assignment -name SYSTEMVERILOG_FILE rom.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ram.sv
+set_global_assignment -name SYSTEMVERILOG_FILE pc.sv
+set_global_assignment -name SOURCE_FILE opcodes.h
+set_global_assignment -name SYSTEMVERILOG_FILE ir.sv
+set_global_assignment -name SYSTEMVERILOG_FILE cpu.sv
+set_global_assignment -name SYSTEMVERILOG_FILE alu.sv
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 256
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+
+set_location_assignment PIN_AE26 -to disp0[0]
+set_location_assignment PIN_AE27 -to disp0[1]
+set_location_assignment PIN_AE28 -to disp0[2]
+set_location_assignment PIN_AG27 -to disp0[3]
+set_location_assignment PIN_AF28 -to disp0[4]
+set_location_assignment PIN_AG28 -to disp0[5]
+set_location_assignment PIN_AH28 -to disp0[6]
+set_location_assignment PIN_AJ29 -to disp1[0]
+set_location_assignment PIN_AH29 -to disp1[1]
+set_location_assignment PIN_AH30 -to disp1[2]
+set_location_assignment PIN_AG30 -to disp1[3]
+set_location_assignment PIN_AF29 -to disp1[4]
+set_location_assignment PIN_AF30 -to disp1[5]
+set_location_assignment PIN_AD27 -to disp1[6]
+
+set_location_assignment PIN_AB23 -to disp3[0]
+set_location_assignment PIN_AE29 -to disp3[1]
+set_location_assignment PIN_AD29 -to disp3[2]
+set_location_assignment PIN_AC28 -to disp3[3]
+set_location_assignment PIN_AD30 -to disp3[4]
+set_location_assignment PIN_AC29 -to disp3[5]
+set_location_assignment PIN_AC30 -to disp3[6]
+set_location_assignment PIN_AD26 -to disp2[0]
+set_location_assignment PIN_AC27 -to disp2[1]
+set_location_assignment PIN_AD25 -to disp2[2]
+set_location_assignment PIN_AC25 -to disp2[3]
+set_location_assignment PIN_AB28 -to disp2[4]
+set_location_assignment PIN_AB25 -to disp2[5]
+set_location_assignment PIN_AB22 -to disp2[6]
+
+set_location_assignment PIN_AC9 -to switches[7]
+set_location_assignment PIN_AE11 -to switches[6]
+set_location_assignment PIN_AD12 -to switches[5]
+set_location_assignment PIN_AD11 -to switches[4]
+set_location_assignment PIN_AF10 -to switches[3]
+set_location_assignment PIN_AF9 -to switches[2]
+set_location_assignment PIN_AC12 -to switches[1]
+set_location_assignment PIN_AB12 -to switches[0]
+
+set_location_assignment PIN_W15 -to n_reset
+set_location_assignment PIN_Y16 -to clock
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name CDF_FILE output_files/Chain2.cdf

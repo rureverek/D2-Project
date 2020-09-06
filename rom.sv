@@ -48,13 +48,14 @@ always_comb
   begin
   mdr = 0;
   case (mar)
-    0: mdr = {`STORE, 5'd16};
-	1: mdr = {`LOAD, 5'd16};
-    2: mdr = {`ADD, 5'd5};
-    3: mdr = {`STORE, 5'd16};
-    4: mdr = {`BNE, 5'd6};
-    5: mdr = 2;
-    6: mdr = 1;
+
+    0: mdr = {`LOAD, 5'd5};
+	1: mdr = {`STORE, 5'd16};
+	2: mdr = {`LOAD, 5'd6};
+	3: mdr = {`XOR, 5'd16};
+    4: mdr = {`STORE, 5'd31};
+	5: mdr = 5'b00001;
+	6: mdr = 5'b10101;
     default: mdr = 0;
   endcase
   end

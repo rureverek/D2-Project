@@ -24,7 +24,7 @@ module TestCPU;
 parameter int WORD_W = 8, OP_W = 3;
 
 logic  clock, n_reset;
-logic [6:0] disp0, disp1;
+logic [6:0] disp0, disp1, disp2, disp3;
 
 CPU #(.WORD_W(WORD_W), .OP_W(OP_W)) c1 (.*);
 

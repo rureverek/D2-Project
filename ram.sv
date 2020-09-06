@@ -1,4 +1,4 @@
-/////////////////////////////////////////////////////////////////////
+ /////////////////////////////////////////////////////////////////////
 // Design unit: RAM
 //            :
 // File name  : ram.sv
@@ -32,7 +32,7 @@ logic [WORD_W-1:0] mem [0:(1<<(WORD_W-OP_W-1))-1]; //top half of address range
 //logic [WORD_W-1:0] mem [0:11]; //top half of address range
 int i;
 
-assign sysbus = (MDR_bus & mar[WORD_W-OP_W-1]) ? mdr : {WORD_W{1'bZ}};
+assign sysbus = (MDR_bus & mar[WORD_W-OP_W-1] & ~(mar == 5'd31) & ~(mar == 5'd30)) ? mdr : {WORD_W{1'bZ}};
 
 always_ff @(posedge clock, negedge n_reset)
   begin
@@ -46,7 +46,7 @@ always_ff @(posedge clock, negedge n_reset)
       mar <= sysbus[WORD_W-OP_W-1:0]; 
     else if (load_MDR)
       mdr <= sysbus;
-    else if (CS & mar[WORD_W-OP_W-1])
+    else if (CS & mar[WORD_W-OP_W-1] & ~(mar == 5'd31) & ~(mar == 5'd30))
       if (R_NW)
         mdr <= mem[mar[WORD_W-OP_W-2:0]];
       else

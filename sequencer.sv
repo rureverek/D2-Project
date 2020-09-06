@@ -24,7 +24,7 @@ module sequencer #(parameter WORD_W = 8, OP_W = 3)
                            input logic [OP_W-1:0] op,
                            output logic ACC_bus, load_ACC, PC_bus, load_PC,
                                               load_IR, load_MAR, MDR_bus, load_MDR,
-                                              ALU_ACC, ALU_add, ALU_sub, INC_PC,
+                                              ALU_ACC, ALU_add, ALU_sub, ALU_xor, INC_PC,
                                               Addr_bus, CS, R_NW);
 	
 `include "opcodes.h"	
@@ -55,6 +55,7 @@ always_comb
   ALU_ACC = 1'b0;
   ALU_add = 1'b0;
   ALU_sub = 1'b0;
+  ALU_xor = 1'b0;
   INC_PC = 1'b0;
   Addr_bus = 1'b0;
   CS = 1'b0;
@@ -123,6 +124,8 @@ always_comb
           ALU_add = 1'b1;
         else if (op == `SUB)
           ALU_sub = 1'b1;
+	else if (op == `XOR)
+	  ALU_xor = 1'b1;
 	    Next_State = s0;
         end
    s9: begin
